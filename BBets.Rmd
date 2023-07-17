@@ -1,6 +1,6 @@
 ---
 title: "Brownlows Bets"
-author: "Your Name Goes Here"
+author: "Dr. J (loser)"
 output: 
   html_document:
     number_sections: true
@@ -20,11 +20,11 @@ source(file="BrLw.R")
 
 <!-- We recommend you use git branches -- create a separate branch for each major section i.e. Introduction, Methods, Results, Inferential Results, and Discussion and Conclusions - leave the YAML block untouched until the final merge where you put in your own name !-->
 
-# Introduction
+# Introduction  
 
 <!--In this section you explain what you are trying to show.  Where did the data come from?  What is the research or other question you are trying to answer?!-->
 
- At the first day of class there are 35 students in Math Statistics class and professor Brownlow always proposes this bet to his students "I will wager $2 to your bet of $1 that at least two people in today's class have  the same birthday.  He tells me he has made that bet 637 times so far. Where do you think his profits are? Discuss this in a markdown document
+ At the first day of class there are 35 students in Math Statistics class and professor Brownlow always proposes this bet to his students, "I will wager $2 to your bet of $1 that at least two people in today's class have the same birthday.  He tells me he has made that bet 637 times so far. Where do you think his profits are? Discuss this in a markdown document
  
 Report git commit structure:
 There are 3 questions and there should be at least 3 separate commits, at least one dealing with each of the 3 questions.
@@ -32,15 +32,37 @@ There are 3 questions and there should be at least 3 separate commits, at least 
 2. For what size class is a 2:1 odds bet fair.
 3. How much money would Brownlow be expected to end up with if the bets went as described.
 
-## Our strategy is to build a Function and the use it to answer the three questions. 
+```{r}
+numInClass = 22
+odds = 1
+bet1 = BrLw(numInClass,odds)
 
-The function will be given a class_size by number of students, odds, and Number_of_times brownlow made the bet.  It will give you back how much Brownlows earnings were. We will use it to answer our three questions below. If you can, improve this function by giving default values to some of its inputs. 
+print(paste('Average win/loss per class:',round(bet1,2)))
+```
 
-# In the class and payoff as described  If you highered 40 brownlow substitute teachers to do the same thing that Brownlow did then.
-## what is their average earnings
-## the standard deviation and a 95% confidence interval for their earnings?
+
+# Our strategy is to build a Function and the use it to answer the three questions. 
+
+The function will be given a class_size by number of students, odds, and Number_of_times brownlow made the bet.  It will give you back how much Brownlow's earnings were. We will use it to answer our three questions below. If you can, improve this function by giving default values to some of its inputs. 
+
+for the three quesions, assume half of the students bet $1, what is brownlow´s average winnings/loss ?
+Find the standard deviation and a 95% confidence interval for brownlow's earnings?
+
+## for class = 35, and 17 people betting $1, with the 2:1 payoff as described, what is brownlow's average winnings/loss per class?
+
+
+```{r}
+numInClass = 35
+odds = 2
+bet1 = BrLw(numInClass,odds)
+
+print(paste('Average win/loss per class:',round(bet1,2)))
+```
+
+
+
   
-<!--Explain and display your method of coming up with a 95% confidence interval of  professor Brownlows winnings (or losings)-->
+<!--Explain and display your method of coming up with a 95% confidence interval of  professor Brownlow's winnings (or losings) !-->
 
 
 # What are the fair odds? Use manipulation of odds in the function to tune Brownlows earnings to zero. 
