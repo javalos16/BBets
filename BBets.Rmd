@@ -54,8 +54,8 @@ There are 3 questions and there should be at least 3 separate commits, at least 
 3. How much money would Brownlow be expected to end up with if the bets went as described.
 
 ```{r}
-numInClass = 22
-odds = 1
+numInClass = 35
+odds = 2
 bet1 = BrLw(numInClass,odds)
 
 print(paste('Average win/loss per class:',round(bet1,2)))
@@ -79,12 +79,26 @@ bet1 = BrLw(numInClass,odds)
 
 print(paste('Average win/loss per class:',round(bet1,2)))
 ```
+The average winning per class is around $8
 
  
 
   
 <!--Explain and display your method of coming up with a 95% confidence interval of  professor Brownlow's winnings (or losings) !-->
+run a bunch of classes and look at a histogram
 
+
+```{r}
+money = c()
+
+for (i in 1:500){
+numInClass = 35
+odds = 4.50
+bet1 = BrLw(numInClass,odds)
+money[i] = bet1
+}
+hist(money)
+```
 
 # What are the fair odds? Use manipulation of odds in the function to tune Brownlows earnings to zero. 
 
@@ -95,6 +109,22 @@ print(paste('Average win/loss per class:',round(bet1,2)))
 
 
 # What size of class makes the 2:1 bet fair?  Use manipulation of number of Students to tune Brownlows earnings to zero.
+
+
+```{r}
+money = c()
+
+for (i in 1:500){
+numInClass = 28
+odds = 2
+bet1 = BrLw(numInClass,odds)
+money[i] = bet1
+}
+hist(money)
+```
+
+
+This chart explains the best 2:1 ratio. For both to have the best odds of winning.
 
 <!--Explain and display the results of your method of coming up with the estimate of professor Brownlows betting profits!-->
 
