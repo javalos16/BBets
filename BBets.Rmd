@@ -45,7 +45,7 @@ BrLw <-function(numInClass,odds){
 
 <!--In this section you explain what you are trying to show.  Where did the data come from?  What is the research or other question you are trying to answer?!-->
 
-I am trying to show the odds of winning in students and showing the best odds of 2:1 ratio for students and teacher.
+I am trying to show the odds of winning in students and teacher. Data is coming from myself and information supplied by teacher. I am also trying to show if the teacher does win how often does the teacher win and how much.
 
  At the first day of class there are 35 students in Math Statistics class and professor Brownlow always proposes this bet to his students, "I will wager $2 to your bet of $1 that at least two people in today's class have the same birthday.  He tells me he has made that bet 637 times so far. Where do you think his profits are? Discuss this in a markdown document
  
@@ -56,13 +56,14 @@ There are 3 questions and there should be at least 3 separate commits, at least 
 3. How much money would Brownlow be expected to end up with if the bets went as described.
 
 ```{r}
-numInClass = 35
+numInClass = 22
 odds = 2
 bet1 = BrLw(numInClass,odds)
 
 print(paste('Average win/loss per class:',round(bet1,2)))
 ```
 
+This is showing the actual odds of winning for the class when we did experiment in class, there was only 22 students in class. Base on odds of winning, the teacher did not have very good odds of winning. Odds show that he was more likely to lose than to win.
 
 # Our strategy is to build a Function and the use it to answer the three questions. 
 
@@ -81,9 +82,7 @@ bet1 = BrLw(numInClass,odds)
 
 print(paste('Average win/loss per class:',round(bet1,2)))
 ```
-The average winning per class is around $8
-
- 
+The average winning per class is around $8. This is assuming that teacher will have minimum of 35 students in class.
 
   
 <!--Explain and display your method of coming up with a 95% confidence interval of  professor Brownlow's winnings (or losings) !-->
@@ -101,6 +100,7 @@ money[i] = bet1
 }
 hist(money)
 ```
+In this graph I am showing the best odds for both students and teacher. If you change the odds to 4.5 you get about the same odds for students and teacher.
 
 # What are the fair odds? Use manipulation of odds in the function to tune Brownlows earnings to zero. 
 
@@ -131,14 +131,8 @@ This chart explains the best 2:1 ratio. For both to have the best odds of winnin
 <!--Explain and display the results of your method of coming up with the estimate of professor Brownlows betting profits!-->
 
  
-
- 
-
- 
-
-
 # Discussion and Conclusion
 
 <!--Discussion and conclusion here.  If professor Brownlow is consistantly making or losing money how could he change his payout so that his profits center on zero?  Also discuss what size his class should be in order to have his current scheme balance at zero profit.!-->
 
- 
+ For the professor to be able to change his payout so that his profits center on zero. The professor would have to have 28 students and a 2:1 ratio for profits to average around zero.
