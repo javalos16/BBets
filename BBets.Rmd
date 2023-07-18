@@ -110,23 +110,3 @@ print(paste('Average win/loss per class:',round(bet1,2)))
 <!--Discussion and conclusion here.  If professor Brownlow is consistantly making or losing money how could he change his payout so that his profits center on zero?  Also discuss what size his class should be in order to have his current scheme balance at zero profit.!-->
 
  
-
-BrLw <-function(numInClass,odds){
-
-  days=1:365
-  varstor=numeric()
-  brownlow = 0
-  
-  for (i in 1:1000) {
-    sam=sample(days,size=numInClass,replace = T)
-    y=duplicated(sam)
-    if (sum(y)>0) brownlow=brownlow+1
-    #else brownlow = brownlow - odds
-  }
-  pWin = brownlow/1000
-  
-  bWins = numInClass/2 * pWin * 1
-  bLoss = numInClass/2 * (1 - pWin)*odds
-  
- return(bWins-bLoss)
-}
