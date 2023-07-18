@@ -1,6 +1,6 @@
 ---
 title: "Brownlows Bets"
-author: "Dr. J (loser)"
+author: "javalos16"
 output: 
   html_document:
     number_sections: true
@@ -14,7 +14,28 @@ knitr::opts_chunk$set(echo = TRUE)
 require(tidyverse)
 require(tigerstats)
 require(knitr)
-source(file="BrLw.R")
+```
+
+```{r}
+BrLw <-function(numInClass,odds){
+
+  days=1:365
+  varstor=numeric()
+  brownlow = 0
+  
+  for (i in 1:1000) {
+    sam=sample(days,size=numInClass,replace = T)
+    y=duplicated(sam)
+    if (sum(y)>0) brownlow=brownlow+1
+    #else brownlow = brownlow - odds
+  }
+  pWin = brownlow/1000
+  
+  bWins = numInClass/2 * pWin * 1
+  bLoss = numInClass/2 * (1 - pWin)*odds
+  
+ return(bWins-bLoss)
+}
 ```
 
 
@@ -59,7 +80,7 @@ bet1 = BrLw(numInClass,odds)
 print(paste('Average win/loss per class:',round(bet1,2)))
 ```
 
-
+ 
 
   
 <!--Explain and display your method of coming up with a 95% confidence interval of  professor Brownlow's winnings (or losings) !-->
@@ -70,21 +91,42 @@ print(paste('Average win/loss per class:',round(bet1,2)))
 
 <!--Decide on your methods:  In this section explain the approach you will take to attack the issue --- how will you decide on a likely estimate of professor Brownlow's earnings or losses after 637 bets. Also explain how you construct a 95% confidence interval about your estimate of his winnings !-->
 
-
+ 
 
 
 # What size of class makes the 2:1 bet fair?  Use manipulation of number of Students to tune Brownlows earnings to zero.
 
 <!--Explain and display the results of your method of coming up with the estimate of professor Brownlows betting profits!-->
 
+ 
 
+ 
 
-
-
-
+ 
 
 
 # Discussion and Conclusion
 
 <!--Discussion and conclusion here.  If professor Brownlow is consistantly making or losing money how could he change his payout so that his profits center on zero?  Also discuss what size his class should be in order to have his current scheme balance at zero profit.!-->
 
+ 
+
+BrLw <-function(numInClass,odds){
+
+  days=1:365
+  varstor=numeric()
+  brownlow = 0
+  
+  for (i in 1:1000) {
+    sam=sample(days,size=numInClass,replace = T)
+    y=duplicated(sam)
+    if (sum(y)>0) brownlow=brownlow+1
+    #else brownlow = brownlow - odds
+  }
+  pWin = brownlow/1000
+  
+  bWins = numInClass/2 * pWin * 1
+  bLoss = numInClass/2 * (1 - pWin)*odds
+  
+ return(bWins-bLoss)
+}
