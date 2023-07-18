@@ -45,6 +45,8 @@ BrLw <-function(numInClass,odds){
 
 <!--In this section you explain what you are trying to show.  Where did the data come from?  What is the research or other question you are trying to answer?!-->
 
+I am trying to show the odds of winning in students and showing the best odds of 2:1 ratio for students and teacher.
+
  At the first day of class there are 35 students in Math Statistics class and professor Brownlow always proposes this bet to his students, "I will wager $2 to your bet of $1 that at least two people in today's class have the same birthday.  He tells me he has made that bet 637 times so far. Where do you think his profits are? Discuss this in a markdown document
  
 Report git commit structure:
